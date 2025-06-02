@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-T">
+    <meta charset="UTF-8"> <!-- Corrected charset value -->
     <title>Web Crawler UI</title>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'; style-src 'self' 'unsafe-inline';"> <!-- Allow inline styles if needed, or link all styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Web Crawler Control Panel</h1>
+    <header>
+        <h1><span class="icon">🕸️</span> Web Crawler Control Panel</h1>
+    </header>
 
     <div class="container">
-        <h2>Batch Crawl from CSV</h2>
+        <h2><span class="icon">📄</span> Batch Crawl from CSV</h2>
         <div class="form-group">
             <label for="csvFile">Select CSV File:</label>
             <input type="file" id="csvFile" name="csvFile" accept=".csv">
@@ -27,26 +29,42 @@
             <label for="maxDepthBatch">Max Depth/Site:</label>
             <input type="number" id="maxDepthBatch" name="maxDepthBatch" value="1" min="0">
         </div>
-        <button id="startBatchCrawl">Start Batch Crawl</button>
-        <div id="batchCrawlStatus" class="status-message"></div>
+        <button id="startBatchCrawl">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18px" height="18px">
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 12h1.52c.59-2.37 2.29-4.32 4.48-5.2V4H4v8zm14.48-2.8c2.19.88 3.89 2.83 4.48 5.2H20v-8h-1.52zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+            </svg>
+            Start Batch Crawl
+        </button>
+            <div id="batchCrawlStatus" class="status-message"></div>
     </div>
 
     <hr>
 
     <div class="container">
-        <h2>System Status</h2>
-        <button id="refreshWorkerStatus">Refresh Worker Status</button>
-        <pre id="workerStatusDisplay"></pre>
-
-        <div class="form-group">
-            <label for="batchIdInput">Batch ID for Status:</label>
-            <input type="text" id="batchIdInput" placeholder="Enter batch_id">
-            <button id="getBatchStatusBtn">Get Batch Status</button>
+        <h2><span class="icon">📊</span> System Status</h2>
+        <button id="refreshWorkerStatus"><span class="icon">🔄</span> Refresh Worker Status</button>
+        <div class="status-display-wrapper">
+            <pre id="workerStatusDisplay">Worker status will appear here.</pre>
         </div>
-        <pre id="specificBatchStatusDisplay"></pre>
+
+
+        <div class="form-group status-section">
+            <h3><span class="icon">📦</span> Batch Status</h3>
+            <label for="batchIdInput">Enter Batch ID for Status:</label>
+            <div class="input-group">
+                <input type="text" id="batchIdInput" placeholder="e.g., batch_2023...">
+                <button id="getBatchStatusBtn"><span class="icon">🔍</span> Get Status</button>
+            </div>
+            <div class="status-display-wrapper">
+                <pre id="specificBatchStatusDisplay">Specific batch status will appear here.</pre>
+            </div>
+        </div>
     </div>
 
-    <!-- Add more UI sections for other endpoints like direct assignment, etc. -->
+    <footer>
+        <p>Crawler UI v1.0</p>
+    </footer>
 
     <script src="renderer.js"></script>
 </body>

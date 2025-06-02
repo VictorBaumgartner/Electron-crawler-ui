@@ -1,0 +1,194 @@
+/* General Body and Typography */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5; /* Lighter grey */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50; /* Dark blue-grey */
+    color: #ecf0f1; /* Light grey/silver */
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+h2 {
+    border-bottom: 2px solid #3498db; /* Blue accent */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+h3 {
+    font-size: 1.3em;
+    color: #34495e; /* Slightly lighter dark blue-grey */
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.icon {
+    margin-right: 8px;
+    font-size: 1.1em; /* Adjust if icons are too small/large */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #dfe6e9; /* Lighter separator */
+    margin: 30px 0;
+}
+
+/* Container for sections */
+.container {
+    background-color: #ffffff;
+    padding: 25px;
+    margin: 0 auto 30px auto; /* Centered with auto margins */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    max-width: 900px; /* Max width for better readability on large screens */
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600; /* Semi-bold */
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+    width: 100%; /* Full width within its container */
+    padding: 12px;
+    border: 1px solid #ccd1d9; /* Softer border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 0.95em;
+}
+
+.form-group input[type="file"] {
+    padding: 8px; /* Different padding for file input */
+}
+
+
+/* Input Group for Batch ID and Button */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between input and button */
+}
+
+.input-group input[type="text"] {
+    flex-grow: 1; /* Input takes available space */
+}
+
+
+/* Button Styling */
+button {
+    background-color: #3498db; /* Primary blue */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+    display: inline-flex; /* To align icon and text */
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+button:active {
+    background-color: #2573a7; /* Even darker on click */
+}
+
+/* Status Messages and Displays */
+.status-message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    border-left-width: 5px;
+    border-left-style: solid;
+}
+
+.status-message.info { /* Default or neutral messages */
+    background-color: #e7f3fe; /* Light blue */
+    color: #2176bd;
+    border-left-color: #2176bd;
+}
+
+.status-message.success {
+    background-color: #e6ffed; /* Lighter green */
+    color: #1e824c;      /* Darker green text */
+    border-left-color: #27ae60; /* Green accent */
+}
+
+.status-message.error {
+    background-color: #fff0f0; /* Lighter red */
+    color: #c0392b;      /* Darker red text */
+    border-left-color: #e74c3c; /* Red accent */
+}
+
+.status-display-wrapper {
+    margin-top: 10px;
+}
+
+.icon-svg {
+    margin-right: 8px;
+    vertical-align: middle; /* Helps with alignment */
+}
+button .icon-svg { /* If SVG is inside a button */
+    fill: white; /* Or currentColor to inherit button text color if not specified */
+}
+
+pre {
+    background-color: #f8f9fa; /* Very light grey */
+    padding: 15px;
+    border: 1px solid #e9ecef; /* Light border */
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    max-height: 350px; /* Slightly increased height */
+    overflow-y: auto;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9em;
+    color: #495057; /* Darker text for readability */
+}
+
+.status-section h3 { /* Specific styling for the "Batch Status" header */
+    display: flex;
+    align-items: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #34495e; /* Darker shade */
+    color: #bdc3c7; /* Lighter text for footer */
+    font-size: 0.9em;
+}
