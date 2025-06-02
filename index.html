@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-T">
+    <title>Web Crawler UI</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Web Crawler Control Panel</h1>
+
+    <div class="container">
+        <h2>Batch Crawl from CSV</h2>
+        <div class="form-group">
+            <label for="csvFile">Select CSV File:</label>
+            <input type="file" id="csvFile" name="csvFile" accept=".csv">
+        </div>
+        <div class="form-group">
+            <label for="outputDirBatch">Output Directory:</label>
+            <input type="text" id="outputDirBatch" name="outputDirBatch" value="./crawl_output_electron_batch">
+        </div>
+        <div class="form-group">
+            <label for="maxConcurrencyBatch">Max Pages/Site:</label>
+            <input type="number" id="maxConcurrencyBatch" name="maxConcurrencyBatch" value="5" min="1">
+        </div>
+        <div class="form-group">
+            <label for="maxDepthBatch">Max Depth/Site:</label>
+            <input type="number" id="maxDepthBatch" name="maxDepthBatch" value="1" min="0">
+        </div>
+        <button id="startBatchCrawl">Start Batch Crawl</button>
+        <div id="batchCrawlStatus" class="status-message"></div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <h2>System Status</h2>
+        <button id="refreshWorkerStatus">Refresh Worker Status</button>
+        <pre id="workerStatusDisplay"></pre>
+
+        <div class="form-group">
+            <label for="batchIdInput">Batch ID for Status:</label>
+            <input type="text" id="batchIdInput" placeholder="Enter batch_id">
+            <button id="getBatchStatusBtn">Get Batch Status</button>
+        </div>
+        <pre id="specificBatchStatusDisplay"></pre>
+    </div>
+
+    <!-- Add more UI sections for other endpoints like direct assignment, etc. -->
+
+    <script src="renderer.js"></script>
+</body>
+</html>

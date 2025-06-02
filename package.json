@@ -1,0 +1,23 @@
+{
+  "name": "electron-crawler-ui",
+  "version": "1.0.0",
+  "description": "UI for Web Crawler Service",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Electron",
+    "Crawler",
+    "UI"
+  ],
+  "author": "Victor Bongard",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.0.0" 
+  },
+  "dependencies": {
+    "axios": "^1.0.0" 
+  }
+}
